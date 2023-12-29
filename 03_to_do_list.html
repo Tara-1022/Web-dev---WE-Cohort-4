@@ -1,0 +1,34 @@
+<!-- Take home exercise 2 - dynamic to do list -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="03_to_do_list.css">
+</head>
+
+<body>
+    <h3>Your very own</h3>
+    <h2>To Do List!</h2>
+
+    <section id="list_container">
+        <div class="to_do_item">
+            <span class="to_do_title">Lorem Ipsum</span>
+            <span class="to_do_description">dummy text of the printing and typesetting industry.</span>
+            <input type="checkbox" onclick="markDone(this)">
+        </div>
+    </section>
+
+    <br>
+    <section class="to_do_generator">
+        <input id="title" type="text" placeholder="Title">
+        <input id="description" type="text" placeholder="Description">
+        <button id="item_adder" onclick="addItem()">Add</button>
+    </section>
+
+    <script src="03_to_do_list.js"></script>
+</body>
+
+</html>
