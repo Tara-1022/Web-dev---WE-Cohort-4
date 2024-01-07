@@ -90,5 +90,26 @@ Angular - started out as built on javascript. After a certain version, renamed f
 > - make sense of JS quirks
 > - install node, angular
 > - create & explore default application. 
-> - go through Tour of Heroes tutorial & implement
+> - go through [Tour of Heroes](https://angular.io/tutorial/tour-of-heroes) tutorial & implement
 > - add a non-trivial extension where ToH ends
+
+## 29-12-2023
+
+`document` property calls DOM tree, has methods s.a `.getElementByID`.  `console.log` is a dev's best friend.
+
+`.trim()` method removes whitespace.
+
+Our to-do list loses the info added on reload. we could use a back-end database, or local storage.
+
+`Array.from(document.querySelectorAll(<selection>)`
+
+`.map(func)` is another useful JS method.
+### Local storage
+`localStorage.setItem('key', 'val')` set the value to `JSON.stringify(val)`. setItem follows a dictionary-like format.
+
+to get everything back, 
+`JSON.parse(localStorage.getItem('val'))` 
+
+> Assignments
+> - create AngularJS app, replace dummy data by call to [fake API with dummy data](https://jsonplaceholder.typicode.com)
+> - create javascript form with all sorts of fields & conditions
