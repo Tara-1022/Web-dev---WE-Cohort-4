@@ -113,3 +113,83 @@ to get everything back,
 > Assignments
 > - create AngularJS app, replace dummy data by call to [fake API with dummy data](https://jsonplaceholder.typicode.com)
 > - create javascript form with all sorts of fields & conditions
+
+## 08-01-2024
+
+angular.dev/guide/forms
+angular.dev/guide/routing/common-router-tasks
+https://angular.dev/guide/signals
+
+## 12-01-2024
+
+Asynchronous blocks of code, i.e, logic that deals with network, user interaction, file access
+
+https://eloquentjavascript.net/ (Chapter 11 - Asynchronous) (interesting, must read)
+
+to make it easier to deal with errors - promises (Angular); a placeholder to be resolved or rejected when a function evaluates. Use callback functions (not very different from them but for the purpose of elegance)
+
+[Event loop - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop)
+[Web sockets documentation](https://websocket.org/guides/road-to-websockets/) is good though deprecated
+
+[Observables](https://angular.io/guide/observables) - bridge between source and observer -  a subscriber used by http to access messages from client. 
+
+fat arrows (=>) are commonly associated with async code blocks
+
+RSJX library
+
+## 19-01-2024
+
+https://pepa.holla.cz/wp-content/uploads/2016/01/REST-API-Design-Rulebook.pdf read pages 1-6
+
+REST - Representational State Transfer
+- must conform to standard - common interface; client-server architecture
+- stateless - state maintained (inserted) into request; burden of tracking not on server - reduce load (should the server really keep track of client-side state changes?)
+- resource-based architecture style
+- principle of idempotence - each request (even duplicate) sent by client (even singular) to be served by server
+
+guide on what the first web designers thought was the most optimal way to build applications
+
+SPRINGboot(?) - framework enables us to build REST API
+			- why not nodejs? if you understand this, you'll have reapplicable skills; great learning point
+			- core concept - inversion of control; now known as dependency injection (describes how components interact & how)
+
+>angular 12 to 17 -> less boilerplate & increased abstraction
+
+https://martinfowler.com/articles/injection.html read until "Forms of Dependency Injection"
+
+https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/overview.html#overview-core-container - springboot docs (dense) - install. treat reading the docs like reading a research paper - read till 1.2.3 then jump to chapter [5](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html#beans-beanfactory) 
+
+https://spring.io/guides/gs/guides-with-vscode/
+
+## 22-01-2024
+cross-origin request
+https://spring.io/guides/gs/rest-service-cors/
+
+build a task manager with task entity. Fields like ID, title, description, task status, date..
+perform all CRUD operations on entity tasks. build an angular service to interact with backend API. listing, updating entities. use angular forms to add, edit tasks. 
+
+> Let's build a Task Manager for the take-home exercise. You need to create an Entity "Task" with atleast the following feilds : id, title, description, task status. Bonus points if you populate more feilds that can be updated from the front end. (Try out dates added etc). Construl RESTful API to handle CRUD operations on the Entity "Task". Since, the cohort is familiar with the Angular framework for frontend, implement a service to interact with the Spring Boot back end API. Create components to list, update, add/delete tasks. You could use Angular forms for adding and updating tasks.
+
+## 29-01-2024
+
+# MongoDB
+
+look at mongodb university
+
+Mongodb - document oriented data model; just a doc not a model
+- no fixed schema; it's difficult to update datamodel in relational models
+- scalable, flexible
+- 'row' - doc, 'table' - collection
+
+> - install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
+>- look into mongodb atlas 
+
+www.mongodb.com/docs/manual/aggregation
+
+postman - can generate documentation for api
+
+> add spring web and spring data mongodb to connect to db in spring initializer
+
+good practice to add toString method for all classes and is called implicitly called by the framework
+www.mongodb.com/compatibility/spring-boot
+spring.io/guides/gs/accessing-data-mongodb/

@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6a51469b9a0577eb",
+            "id": "c48531d63d66675b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -147,8 +147,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6a51469b9a0577eb",
+  "active": "c48531d63d66675b",
   "lastOpenFiles": [
+    "29-1-24.md",
+    "Notes.md",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/lib/jasmine-core/example/node_example/spec/helpers/jasmine_examples/SpecHelper.js",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/lib/jasmine-core/example/node_example/spec/jasmine_examples/PlayerSpec.js",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/lib/jasmine-core/example/node_example/lib/jasmine_examples/Song.js",
@@ -159,7 +161,6 @@
     "angular-tour-of-heroes/node_modules/@angular/compiler/esm2022/src/template/pipeline/ir/src/ops/create.mjs",
     "angular-tour-of-heroes/node_modules/@angular/compiler/esm2022/src/template/pipeline/ir/src/ops/host.mjs",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/lib/jasmine-core/example/node_example/spec/jasmine_examples",
-    "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/lib/jasmine-core/example/node_example/spec/helpers",
     "angular-tour-of-heroes/node_modules/webpack/node_modules/ajv-keywords/keywords/dotjs/README.md",
     "angular-tour-of-heroes/node_modules/webpack/node_modules/ajv/lib/dotjs/README.md",
     "angular-tour-of-heroes/node_modules/terser-webpack-plugin/node_modules/ajv-keywords/keywords/dotjs/README.md",
@@ -184,7 +185,6 @@
     "angular-tour-of-heroes/node_modules/vite/node_modules/@esbuild/win32-x64/README.md",
     "angular-tour-of-heroes/node_modules/socks/docs/examples/typescript/connectExample.md",
     "angular-tour-of-heroes/node_modules/socks/docs/examples/typescript/bindExample.md",
-    "angular-tour-of-heroes/node_modules/socks/docs/examples/typescript/associateExample.md",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/images/jasmine_favicon.png",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/images/jasmine-horizontal.svg",
     "angular-tour-of-heroes/node_modules/karma-jasmine/node_modules/jasmine-core/images/jasmine-horizontal.png",
