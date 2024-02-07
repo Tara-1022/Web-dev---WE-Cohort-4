@@ -24,7 +24,7 @@ selector { property: value }
 >(Git repo - submit commit ids) Take home assignment - table, images, (pretty) - create fan page - images, links with SM icons
 
 
-“of course, you can SEEK OUT error validation if you like; there are plenty of tools available online which can give you great static insights on your files. [https://www.w3.org/wiki/Validating_your_HTML?TB_iframe=true](https://www.w3.org/wiki/Validating_your_HTML?TB_iframe=true)”
+“of course, you can SEEK OUT error validation if you like; there are plenty of tools available online which can give you great static insights on your files."[https://www.w3.org/wiki/Validating_your_HTML?TB_iframe=true](https://www.w3.org/wiki/Validating_your_HTML?TB_iframe=true)”
 
   
 ## 22-12-2023
@@ -50,13 +50,11 @@ What are the behaviours of JavaScipt that people find strange?
 
 This is why we use TypeScript - compiles to JS but is typed.. Is a static typechecker.
 
-Activities   - todo list (add task & strike off)
-
-- Like button
-    
-- Animation
-    
-- Quiz
+>Activities 
+- [x] todo list (add task & strike off)
+- [ ] Like button    (or)
+- [ ] Animation    (or try)
+- [ ] Quiz
 # Angular
 
 Framework - structure with prewritten components. Takes care of repetitive boiler template to save time & energy.
@@ -86,12 +84,12 @@ Angular - started out as built on javascript. After a certain version, renamed f
 - No calls to server
 
 >Assignments
-> - To-do list
-> - make sense of JS quirks
-> - install node, angular
-> - create & explore default application. 
-> - go through [Tour of Heroes](https://angular.io/tutorial/tour-of-heroes) tutorial & implement
-> - add a non-trivial extension where ToH ends
+- [x] To-do list
+- [x] make sense of JS quirks
+ - [x] install node, angular
+ - [x] create & explore default application. 
+ - [ ] go through [Tour of Heroes](https://angular.io/tutorial/tour-of-heroes) tutorial & implement
+ - [ ] add a non-trivial extension where ToH ends
 
 ## 29-12-2023
 
@@ -111,8 +109,8 @@ to get everything back,
 `JSON.parse(localStorage.getItem('val'))` 
 
 > Assignments
-> - create AngularJS app, replace dummy data by call to [fake API with dummy data](https://jsonplaceholder.typicode.com)
-> - create javascript form with all sorts of fields & conditions
+- [ ] create AngularJS app, replace dummy data by call to [fake API with dummy data](https://jsonplaceholder.typicode.com)
+ - [ ] create javascript form with all sorts of fields & conditions
 
 ## 08-01-2024
 
@@ -168,7 +166,12 @@ https://spring.io/guides/gs/rest-service-cors/
 build a task manager with task entity. Fields like ID, title, description, task status, date..
 perform all CRUD operations on entity tasks. build an angular service to interact with backend API. listing, updating entities. use angular forms to add, edit tasks. 
 
-> Let's build a Task Manager for the take-home exercise. You need to create an Entity "Task" with atleast the following feilds : id, title, description, task status. Bonus points if you populate more feilds that can be updated from the front end. (Try out dates added etc). Construl RESTful API to handle CRUD operations on the Entity "Task". Since, the cohort is familiar with the Angular framework for frontend, implement a service to interact with the Spring Boot back end API. Create components to list, update, add/delete tasks. You could use Angular forms for adding and updating tasks.
+> Let's build a Task Manager for the take-home exercise. 
+- [ ] You need to create an Entity "Task" with atleast the following fields : id, title, description, task status. 
+ - [ ] Bonus points if you populate more fields that can be updated from the front end. (Try out dates added etc). 
+ - [ ] Construl RESTful API to handle CRUD operations on the Entity "Task". 
+ - [ ] Since, the cohort is familiar with the Angular framework for frontend, implement a service to interact with the Spring Boot back end API. 
+ - [ ] Create components to list, update, add/delete tasks. You could use Angular forms for adding and updating tasks.
 
 ## 29-01-2024
 
@@ -181,14 +184,16 @@ Mongodb - document oriented data model; just a doc not a model
 - scalable, flexible
 - 'row' - doc, 'table' - collection
 
-> - install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
->- look into mongodb atlas 
+> Take home
+- [ ]  install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
+ - [ ]  look into mongodb atlas 
 
 www.mongodb.com/docs/manual/aggregation
 
 postman - can generate documentation for api
 
-> add spring web and spring data mongodb to connect to db in spring initializer
+> Take-home
+- [ ] add spring web and spring data mongodb to connect to db in spring initializer
 
 good practice to add toString method for all classes and is called implicitly called by the framework
 www.mongodb.com/compatibility/spring-boot
