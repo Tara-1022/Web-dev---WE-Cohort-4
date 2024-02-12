@@ -87,8 +87,9 @@ Angular - started out as built on javascript. After a certain version, renamed f
 - [x] To-do list
 - [x] make sense of JS quirks
  - [x] install node, angular
- - [x] create & explore default application. 
+ - [x] create & explore default application.  (ng new --no-standalone; ng serve --open)
  - [ ] go through [Tour of Heroes](https://angular.io/tutorial/tour-of-heroes) tutorial & implement
+	 - working in src/app
  - [ ] add a non-trivial extension where ToH ends
 
 ## 29-12-2023
@@ -185,8 +186,8 @@ Mongodb - document oriented data model; just a doc not a model
 - 'row' - doc, 'table' - collection
 
 > Take home
-- [ ]  install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
- - [ ]  look into mongodb atlas 
+- [x]  install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
+ - [x]  look into mongodb atlas 
 
 www.mongodb.com/docs/manual/aggregation
 
