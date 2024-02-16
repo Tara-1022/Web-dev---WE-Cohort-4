@@ -170,7 +170,7 @@ perform all CRUD operations on entity tasks. build an angular service to interac
 > Let's build a Task Manager for the take-home exercise. 
 - [ ] You need to create an Entity "Task" with atleast the following fields : id, title, description, task status. 
  - [ ] Bonus points if you populate more fields that can be updated from the front end. (Try out dates added etc). 
- - [ ] Construl RESTful API to handle CRUD operations on the Entity "Task". 
+ - [ ] Construct RESTful API to handle CRUD operations on the Entity "Task". 
  - [ ] Since, the cohort is familiar with the Angular framework for frontend, implement a service to interact with the Spring Boot back end API. 
  - [ ] Create components to list, update, add/delete tasks. You could use Angular forms for adding and updating tasks.
 
@@ -184,6 +184,8 @@ Mongodb - document oriented data model; just a doc not a model
 - no fixed schema; it's difficult to update datamodel in relational models
 - scalable, flexible
 - 'row' - doc, 'table' - collection
+
+postman - middleman b/w database and backend
 
 > Take home
 - [x]  install mongodb community edition, compass (for visualization of data), bi (business intelligence) connector (translates all sql queries into mongdb when u have an old project which still uses relational db), postman
@@ -199,3 +201,39 @@ postman - can generate documentation for api
 good practice to add toString method for all classes and is called implicitly called by the framework
 www.mongodb.com/compatibility/spring-boot
 spring.io/guides/gs/accessing-data-mongodb/
+
+## 16-02-2024
+
+# Spring Security
+
+https://docs.spring.io/spring-security/reference/servlet/authentication/index.html
+
+Username, pwd or ldap or csa or oauth (now popular) - defined in security filter chain
+
+- **ldap** - lightweight directory access protocol - creates server where username, pwd pairs are stored in .ldif. auth requests go to server instead of db, checks against data there.
+- **oauth** - 
+
+interacts with authentication manager - 
+
+authentication provider
+- in memory - checks against credentials in app runtime memory - not really for prod
+-  database  - checks against credentials in db
+
+Tell the application the mechanism you want to follow. Security context - fills up as people log in and out - stores info of people & access. Keep info of grants - what who has access to (granted authorities)
+
+>Exercise
+- Create using springboot initializr, add spring security as dependency to a project, run (details will be added to a file)
+
+
+https://docs.spring.io/spring-security/reference/servlet/authentication/architecture.html The components that interact during lifecycle of the process
+
+**MongoDB**
+- we already looked at integrating spring and mongodb
+convention - config file for security configurations.
+
+prod apps - don't really fetch from the db ..?
+
+>Assignment
+- [ ]  create fake server on your system to imitate behaviour of prod ldap - follow [tutorial](https://spring.io/guides/gs/authenticating-ldap)
+- [ ] read about [CAS](https://docs.spring.io/spring-security/reference/servlet/authentication/cas.html)
+- [ ] create API to save creds to db - can use postman to make postman api or front-end access point with form. Implement login page (username - pwd credentials)
