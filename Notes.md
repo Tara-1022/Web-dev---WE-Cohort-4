@@ -237,3 +237,73 @@ prod apps - don't really fetch from the db ..?
 - [ ]  create fake server on your system to imitate behaviour of prod ldap - follow [tutorial](https://spring.io/guides/gs/authenticating-ldap)
 - [ ] read about [CAS](https://docs.spring.io/spring-security/reference/servlet/authentication/cas.html)
 - [ ] create API to save creds to db - can use postman to make postman api or front-end access point with form. Implement login page (username - pwd credentials)
+
+## 19-02-2024
+
+Making a security filter chain
+- creates a security filter chain object, perform filtering & return built object
+
+[OAuth](https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html) allows you to to use a token to signify authentication; allows existing account sign-ins
+
+jwt.io/introduction - open source tech used by authentication systems
+- Header + payload + signature
+- issues the first time an unauthenticated user is authenticated (credentials are verified) 
+- JWT is sent every time access required. Expires after timeframe
+- compact
+
+what are the differences between sessions and tokens?
+Session - server side, dedicated connection; token - up in the air, verification done via signature
+
+access token 
+- string used by client to make requests to the resource server
+- describes scope and authorisation
+- has auth grants & descriptions stored
+refresh token
+- no need to involve user when token expires. 
+- refresh tokens have their own lifespan
+- only encodes info to issue new access token
+
+mechanism of how they are used
+- access token issued when user authenticated. 
+- most implementations invalidate prev refresh token and issue new one when a refresh token is used. Refresh-token-cycle generally continues until user logs out
+- access token sent out with every request - more vulnerable. request token only exposed on issue or request - stored on client side; more likely to be valid
+
+third party has access to endpoint where you can login, credentials maintained form there
+
+>Assignment
+- [ ] implement sign in, sign up, get method. every use has role attached. various roles can view various endpoints. using JWT 
+- [ ] extend above to use refresh token as well
+- [ ] OAuth - look up components of the mechanism - 3 main auth flows; Authorisation flow
+
+## 23-02-2024
+
+# OAuth
+
+*Reading time* used [1](https://darutk.medium.com/the-simplest-guide-to-oauth-2-0-8c71bd9a15bb),[2](https://www.varonis.com/blog/what-is-oauth)
+- Access delegation - provide access to third party without revealing password, uname
+- Authorisation not authentication (permission not proving identity)
+- valet key example - don't have the full scope
+- service provider gives third party request token + secret. Secret is signed onto each request made for verification
+- user provides this token to service provider. It is marked as verified 
+- verified request tokens are converted to access token by third party
+- user can manage third party's permissions through service provider
+
+Look up authorisation flows - auth code grant, implicit grant, resource owner password credential grant. [used](https://frontegg.com/blog/oauth-flows)
+- Authorization Code Flow exchanges auth code with token.  - user receives a one time code (by logging in to service provider) and this is passed on to app.
+- app then forwards that with client ID and secret to oauth server
+
+>Project
+>- project + presentations once Large System Design ends.
+>- dates - 18th, 22th, 25th march. (3rd & 4th week)
+>- 18th - everyone makes presentation. Teams of 3.
+>- Web application - more creative the better
+>- template project that we could build up later is good. 
+>- E,g for employees management portal
+>	- define users and roles
+>	- dashboards for each type, maybe a hierarchy
+>	- sign up page, credentials. Once admin approves sign up, log in allowed
+>	- Role based authorisation to make resources accessible
+>	- limits on employees on a project, even business logic
+>- interactive fantasy world site - houses, secret keys
+
+sravya.g@talentsprint.com
