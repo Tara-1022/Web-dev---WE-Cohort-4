@@ -32,7 +32,7 @@ Hashing
 - Rainbow tables can be created based on popular passwords - using statistics. so,
 
 Salt
-- Beat statistics. Generate randomw string & add to password before hashing a common password
+- Beat statistics. Generate random string & add to password before hashing a common password
 - completely random. Salt stored in database - not harmful to be seen
 - not worth it for someone to figure out salts
 - **bCrypt/Blowfish** - 22 character salt + full hash
@@ -98,7 +98,7 @@ task of RSA key generation (pair generation)
 Think about the HTTPS handshake
 - info sent must be encrypted. Symmetric keys must be exchanged - once keys are exchanged, symmetric is amazing
 - Sequence of ops:
-	- client (browser) is server's public key and certificate. Certificate - proof of identity - given by GeoTrust. signed by GeoTust's private key. Browser verifies certificates using public key. GT locks all certficates & gives browsers the key to check that the lock is right. after decrypting the encryption that could only have been created by GeoTrust, the browser reads 'Google certificate'. The certificate is refreshed after a certain validity period. What stops my broswer from relaying the certificate to pretend to be google? **replay attacks**? Combination of the need to be registered with DNS, respond to request, and have the cert adds some security
+	- client (browser) is server's public key and certificate. Certificate - proof of identity - given by GeoTrust. signed by GeoTust's private key. Browser verifies certificates using public key. GT locks all certficates & gives browsers the key to check that the lock is right. after decrypting the encryption that could only have been created by GeoTrust, the browser reads 'Google certificate'. The certificate is refreshed after a certain validity period. What stops my broswer from relaying the certificate to pretend to be google? Combination of the need to be registered with DNS, respond to request, and have the cert (maybe) adds some security
 	![image](images/Screenshot%202024-02-26%20205835.png)
 	![image](images/Screenshot%202024-02-26%20205903.png)
 	
@@ -111,8 +111,8 @@ Think about the HTTPS handshake
 ## OAuth
 allows one to register a third party app with your account, granting limited access. third party is main one's client in this case
 - provide a way for LeafScroll (3rd party) to authenticate itself for access to Podhaar (account) to access content from the app
-Auth stands for authorisation, not authentication
-uses JWTs as standard token format.
+
+Auth stands for authorisation, not authentication. uses JWTs as standard token format.
 
 OpenIDConnect - provides authentication using similar mechanisms
 
@@ -129,7 +129,7 @@ SSH
 
 >Look up
 - [ ] *the SSH handshake* - how does it compare to HTTPS
-- [ ] What stops my browser from relaying the certificate to impersonate google?
+- [ ] What stops my browser from relaying the certificate to impersonate google? - replay attacks
 - [ ] function-as-a-server
 - [ ] nodempotence
 - [ ] CAP theorem
