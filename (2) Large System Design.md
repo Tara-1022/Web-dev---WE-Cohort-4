@@ -58,9 +58,11 @@ Think about the possible attack vectors
 How do you know that someone is the true sender? message is not sent by dwight
 - *Signing* 
 - what kinds of documents need signatures?
+
 Needs
 - good hashing function that generates a compact hash (md5) (its param is shared) - small changes in input have large changes in output - follows rules set by randomised key, that are irreversible.
 - good asymmetric encryption technique (RSA)
+
 Steps
 - generate an md5 hash of  your message 
 - generate an RSA key pair
@@ -129,8 +131,87 @@ SSH
 
 >Look up
 - [ ] *the SSH handshake* - how does it compare to HTTPS
-- [ ] What stops my browser from relaying the certificate to impersonate google? - replay attacks
-- [ ] function-as-a-server
-- [ ] nodempotence
+- [x] What stops my browser from relaying the certificate to impersonate google? - replay attacks
+- fingerprinting - something like a timestamp to say 'I sent this at this time' 
+- [x] function-as-a-server
+	- [ With FaaS, you can divide the server into functions that can be scaled automatically and independently so you don’t have to manage infrastructure.](https://www.ibm.com/topics/faas)
+- [x] nodempotence
 - [ ] CAP theorem
 - [ ] Can two public keys have a common private key? (No)
+
+## 01-03-24
+
+[Four easy reads to understand distributed systems issues](https://blog.separateconcerns.com/2015-07-07-four-easy-reads-distsys.html)
+[Brewer's conjecture - CAP theorem](https://dl.acm.org/doi/10.1145/564585.564601)
+[Why Logical Clocks are Easy](https://queue.acm.org/detail.cfm?id=2917756)
+# Distributed systems
+what changes and why should I care?
+
+Robustness, Availability, Throughput, Latency - delicate balance thrown into chaos with the advent of DS
+
+DS 
+- group of autonomous nodes (systems) coordinate to perform a task
+- eg distributed MapReduce
+- changes
+	- faults are easier to manage when there is a common clock, memory address space, access to mediator b/w processes
+	- Can't use Ostrich method of deadlock recovery - do nothing - wait for a restart; there is now a **network barrier**
+- Implicit, basic things are no longer guaranteed - time? to what clock will you synchronise events? what is the sequence of events? debugging?
+- IPC become RPC - ask another system's memory to execute on your behalf
+- Finally have to deal with hardware - there is a physical hard lower limit on latency
+- Systems are going to fail. Decide on which parts are too precious to be ambiguous. It's better to build systems that **fail very fast and very loudly** - be vocal about the fact that constraints are not met. Provide recovery options
+
+Failures Happen at the level of the wire
+
+8 (debunked) Fallacies
+- Application programs take reliability of network via HTTP (a leaky abstraction over TCP) for granted. TCP is what knows what exactly went wrong.
+- Latency. Routing essential to find servers in proximity- immense amount of distance to be covered (even underwater)
+- Bandwidth - right amount of data to send, load balancing.. an upper limit to how much info can be sent given hardware requirements & time limit
+- Cannot assume that any unsecure data is not going to be misused. The network is a huge part of the system out of one's hands
+- Changing topology- accidentally or deliberately, nodes are continuously added & removed. Affects scaling. Topology outside the system is entirely uncontrollable. Determines what latency & bandwidth is going to look like
+- Multiple administrators - there is no one person who knows everything about the system. monitoring now needed
+- Transport cost exists - requires a lot to keep a system running - time, security, risk, latency....
+- No homogeneity - hardware, local environment, capcaty, protocol
+![comic](images/Comic_2024-03-01%20201410.png)
+
+Failure is now a probability, not a possibility. all happy families are the same - boring. There are many interesting ways to be tragic
+All things pulling at each other, impossible to optimise all at once
+
+#### Two Phase Commit
+- ensure that a process in a DS is an atomic transaction (operations that are collectively committed OR aborted)
+- 1a - coordinator queries is 'ready to commit'
+- 1b - participants vote
+- 2a - coordinator tallies vote
+- 2b - if all agree, coordinator instructs to commit; if even one says no, all roll back
+
+Requires write-ahead capability
+
+*✨Issues✨*
+- need for coordinator - what if something goes wrong on coordinator's end; but the identity of the coordinator does not matter
+- Blocking protocol - one problematic component/coordinator can block all other functional processes (who puked on the ride?)
+- many steps & complicated dance. Forces asynchronous participants to behave synchronously. Requirements of synchronocity are very hard to fulfil in an asynchronous systems - introduces unreasonable limitations
+
+A way to demarcate sections of the system too sensitive to take lightly - bank money transfers
+
+[The most natural way to model real life systems may not be the synchronous way](https://www.infoq.com/articles/webber-rest-workflow/)
+- Starbucks order - short synchronous phase (payment; too important to be async) + long asynchronous phases (making drinks; you're not waiting at the counter for that)
+- 'integration' of system components via messaging. How do components of a workflow orchestrate to get something done while remaining independent? (questions worth asking)
+- the processes here - placing order, paying, coffee creation.. these are not very obvious state changes in an async system4
+
+You need to pick and choose that parts of the workflow that require consistency (2PC) (payment), those that require availability (Swiggy restaurant list- doesn't matter if it's not always right)
+#### ACID vs BASE
+for systems where transactions are important. 
+Atomic, Consistent, Isolated (from effects of others), Durable
+in tandem with
+Basically Available, Soft-state, Eventually Consistent
+
+Impossibility result - [Alan Turing's Halting problem](https://www.youtube.com/watch?v=eqvBaj8UYz4) - a hard limit on what engineers can do. Similarly,
+**CAP** is an impossibility result - If you care about tolerance to network **partitions** (is a modern non-negotiable) (graph-type partition) (inability of one/more nodes to connect to the network)
+You have to forfeit **Availability** - now you can guarantee system backups to ensure **Consistency**. Swiggy's restaurant list prefers availability. YouTube forfeits availability for consistency when populating homefeed updating views, chooses consistency when playing a video. Instagram - liking a (cached) photo causes cache to reload & lose update.
+
+Consistency - can be strong (every update recognised by everyone else), weak (some parts care more about showing data than accuracy of data), eventual (guarantees that an update is eventually made or will fail loudly).
+Cache - eventual consistency model.
+
+>Lookup
+- [ ] Admiral Grace Hopper & COBOL
+- [ ] Levels of Consistency
+- [ ] [Why Logical Clocks are Easy](#01-03-24)
