@@ -170,7 +170,8 @@ Failures Happen at the level of the wire
 - Changing topology- accidentally or deliberately, nodes are continuously added & removed. Affects scaling. Topology outside the system is entirely uncontrollable. Determines what latency & bandwidth is going to look like
 - Multiple administrators - there is no one person who knows everything about the system. monitoring now needed
 - Transport cost exists - requires a lot to keep a system running - time, security, risk, latency....
-- No homogeneity - hardware, local environment, capcaty, protocol
+- No homogeneity - hardware, local environment, capacity, protocol
+
 ![comic](images/Comic_2024-03-01%20201410.png)
 
 Failure is now a probability, not a possibility. all happy families are the same - boring. There are many interesting ways to be tragic
@@ -215,3 +216,75 @@ Cache - eventual consistency model.
 - [ ] Admiral Grace Hopper & COBOL
 - [ ] Levels of Consistency
 - [ ] [Why Logical Clocks are Easy](#01-03-24)
+
+## 04-03-2024
+
+when complexity increases, architecture dominates code in projects.  OOPS helps you model things in the real world especially if they have a lot of moving parts that interact.
+
+Now, programs solve more general, business logic rather than highly technical. Need to be readable to us primarily, machines obviously but secondarily. OOP - robust & powerful means of expressing real world objects, states, processes.
+
+Bad code gets written. 
+Rotting design symptoms - Bob Martin
+- rigidity (difficult to change even in simple ways - lot of coupled (dependent) components, leading to misbehaviour) - changing the color in one room requires changes everywhere else
+- fragility (breakable) - changing the colour of a window leads to breakdown in china - affects the speed of fix (like hydra)
+- immobility (non reusable) - if reusability is bad, code must be changed in multiple places - cannot use code from one project
+- viscosity (design & environment) - design is practically difficult to adhere to; effect of the environment - devs write code in a way that minimises the time they have to spend (code reviews, compilation time)
+
+![image](Screenshot%202024-03-04%20201820.png)
+
+Building blocks:
+## Open-Closed Principle
+- Don't change something that was already working to bring in a new change
+- design for extensibility without modification
+- Identify contract being provided - if a method can perform a password authentication, moving to a different decryption algorithm does not result in a change in the contract. Contract? a method that takes a certain inputs & performs certain outputs
+- aka polymorphism (consistent, unmodifiable interface)
+- separates higher abstraction (less likely to change; interface) from often changing (low in inheritance hierarchy)
+
+[Yahtzee](https://pi.math.cornell.edu/~mec/2006-2007/Probability/Yahtzee.htm)
+
+OOP languages are built on abstraction - compiler checks solidifies guarantees about the language
+
+## Liskov substitution principle
+
+Barbara Liskov - developed the idea of the abstract datatype
+- Liskov substitution principle - tells you what inheritance is supposed to be - the act of creating derived classes that can be substituted for their base classes
+- The child class must satisfy the contracts set by the parent
+
+A contract is more than just an argument list.
+
+Inheritance is a relationship where you can fill in 'child instance IS a parent instance'; the child is a specialisation of the parent.
+
+Consequences of a statement/relationship like that? 'Square' as a child of 'Rectangle' is a fundamentally bad abstraction to be applying. - [see](https://isocpp.org/wiki/faq/proper-inheritance#circle-ellipse-nonintuitive)
+## Dependency Inversion Principle
+
+What should you abstract, when and how.?
+- Higher level module must not depend on a lower level module. Should rather depend on a higher level abstraction (that has the signature), which is conveniently filled in by the lower level.
+- Random library - don't depend on it, depend on the abstracted signature. What if you have multiple generators?
+- Known as dependency injection
+- Don't know what the implementation is going to be - this is injected at runtime, into the expected interface
+
+Abstractions are the Hinge points that represent places where the design can be OCPd
+
+## Interface Segregation Principle
+
+if a class has several clients, create specific interfaces for each client & multiply inherit into the class (rather than loading the class with all methods at once)
+
+Decide abstractions based on requirements that change together.
+
+![image](images/Screenshot_2024-03-04_211850.png)
+
+## SRP
+Separation of concerns - build separate packages for separate concerns
+
+Design patterns implement the above principles in commonly reused ways.
+![Image](images/Screenshot_2024-03-04_212416.png)
+Abstract factory - the one place where DIP violated - one place where things are actually instantiated; other parts of the program ask for these. (SpringBoot dependency injection uses this, and the server facade pattern - intercepts request & injects concrete implementation)
+
+> Read
+- [ ] preconditions & postconditions (LSP)
+- [ ] [Robert C Martin](https://wnmurphy.com/assets/pdf/Robert_C._Martin_-_2000_-_Principles_and_Patterns.pdf)'s article
+- [ ] Wiki article for each principle
+- [ ] Gang of four 1998 book - design patterns
+- [ ] Rectangle and square C++ (previous)
+- [ ] [Yahtzee git](https://github.com/aruvi-py/prodapt-bootcamp/tree/main/calibration/src/yahtzee)
+
