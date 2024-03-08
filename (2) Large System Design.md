@@ -285,6 +285,100 @@ Abstract factory - the one place where DIP violated - one place where things are
 - [ ] [Robert C Martin](https://wnmurphy.com/assets/pdf/Robert_C._Martin_-_2000_-_Principles_and_Patterns.pdf)'s article
 - [ ] Wiki article for each principle
 - [ ] Gang of four 1998 book - design patterns
-- [ ] Rectangle and square C++ (previous)
+- [x] Rectangle and square C++ (previous)
 - [ ] [Yahtzee git](https://github.com/aruvi-py/prodapt-bootcamp/tree/main/calibration/src/yahtzee)
 
+## 08-03-24
+class produces an instance that is a single instance. therefore classes are names in singular
+
+overloading (implementations for diff param list) does not have something to do with inheritance. overriding (override superclass implementation) does.
+
+enumerated types - a value can take on any of a short list of named constants. Aruvi's enum is the factory. lets them depend on high level abstractions. everything is initialised here and no where else.
+
+allows them to write generic code elsewhere.
+
+whatever concretely inherits an interface must concretely implement an abstract method. eg 'for Category c in catgories' without worrying about all the different kinds
+
+Aruvi decoupled 'Yahtzee' and 'FullHouse' by creating a (more abstract) parent both of them can depend on. Now after the dependency on FullHouse is removed, who is going to instantiate the FullHouse? Exactly one guy - Category - factory instantiates and provides to whoever calls. enables dependency on high level abstraction. allows Yahtzee to not care about the category. Allows you to control which parts of the code or requirement changes.
+
+# Waterfall model
+
+- simple
+- iterative/ predictive
+- defined phases
+- interaction with customer only at the end
+
+[Paper by Winston Royce](https://www.praxisframework.org/files/royce1970.pdf) - says the waterfall model doesn't work. 'I believe in this concept, but the implementation described above is risky and invites failure'
+
+'Something that feels primitive, low tech to us, was at its time, at one time, cutting edge technology' Primitive tools were made by people who needed them.
+
+Proposed to deal with the specific risks of development of large software systems. Most important one? cost of discovering a bug. There is a very strict hierarchy through which the cost of discovering a bug increases exponentially.
+During the requirements extraction, a misunderstanding, i.e, minutes of a meeting must be fixed. takes x to do so.
+At the time of design? If you discover you've misunderstood, you would have to go back, speak, clear.... 10x. your working design is resistant to change.
+Now, at the time of writing code, you discover the bug - can't fix it right there! you'll have to go back, redesign, reimplement it. 100x
+testing?
+
+![cost of fix](/images/kafka.png)
+
+difference between discovering between before and after release is difference between unicorn and bankruptcy.
+
+every phase has associated documents to reduce risk as much as possible.
+create pilot models.
+involve the customer
+
+One in a long line to criticise! Says waterfall model is not a model, simply what turns up after applying SE organisation to a primitive idea. All interventions he adds on are in consideration of the humanness of people. (why else explicitly require documentation & testing)
+
+## Agile
+Holes in this are addressed by the [Agile Manifesto](https://agilemanifesto.org/)
+
+'waterfall model' is often an homonym of 'bureaucratic structure'
+
+[Conway's law](https://en.wikipedia.org/wiki/Conway%27s_law) - "Organizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations."
+
+What holes in waterfall?
+- software for documentation - have working code for clarity
+- contracts & docs - keep the customer in the room
+- respond to change than have a perfect plan
+
+Software engineering was in a crisis - software gets delayed. Focus on rigid structure than development.
+![image](images/Screenshot_2024-03-08_210209.png)
+1 year
+
+give more power to the individual who increases the energy of the work - build around motivated individuals for better pacing. trust the cowboy coder & put restrictions, give encouragement to them, they will get the job done. Don't -make the wrong person write the wrong thing (uml).
+
+customer in the room
+
+Talk is cheap - show me the code
+
+create a sustainable system to work at a constant pace indefinitely. A day is only 6 hours - respect human limitation.
+
+**Sprint** - team works to finish set amount of work. work guided by realistic technical estimates.
+
+Design is still important
+
+Harness the specific type of laziness in programming to put it to good use
+
+Amazon - 2-pizza team - 8 people (not bigger than one that can be served by 2 pizzas if working late) + no imposed structure - decided by software design
+
+Adjust & readjust behaviour by reflection - keep the waterfall out. Keep track of physical _and_ human processes
+
+prototype should be killed
+
+Agile tools often undermine the principles & problems agile tries to solve. It's not easy to create tech solutions to social problems - at the end of the day, waterfall model is a social problem. Clash between the developer who wants freedom & the manager who wants results.
+
+Example - IVF - nobel prize for medicine. credited for trying to solve the problem of infertility. Does the problem of infertility really need tech solution & did it actually solve the problem? Simple solution - adopt somebody. or be fine with it. Core social problem; put back on top of tech solution! those who want the solution are denied it. It's tricky to develop tech solutions for social problems.
+
+Point of the sprint - retrospection for improvement - did I have a bad week or am I having a bad process?
+
+> Read
+- [ ] political clashes between free, proprietary software, role of SE in a changing world [Origins and History of Unix](http://www.catb.org/esr/writings/taoup/html/historychapter.html) 
+- [ ] The Mythical Man Month - Fred Brooks
+- [ ] [12 principles of agile](https://agilemanifesto.org/principles.html)
+- [ ] [The Demise of the Waterfall Model Is Imminent](https://queue.acm.org/detail.cfm?id=971573)
+- [ ] Body, Reproduction and Technology: Local Subversions and Global Regressions by Chayanika Shah
+
+Additional starting points
+- [ ] [Joel on Software](https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/)
+- [ ] [Martin Fowler on waterfall](https://martinfowler.com/bliki/WaterfallProcess.html)
+- [ ] This is the bare minimum every programmer needs to know about unicode
+- [ ] Designing Data Intensive Applications (?)
