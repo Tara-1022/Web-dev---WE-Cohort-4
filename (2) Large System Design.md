@@ -287,6 +287,7 @@ Abstract factory - the one place where DIP violated - one place where things are
 - [ ] Gang of four 1998 book - design patterns
 - [x] Rectangle and square C++ (previous)
 - [ ] [Yahtzee git](https://github.com/aruvi-py/prodapt-bootcamp/tree/main/calibration/src/yahtzee)
+- [ ] [og SOLID - Robert C Martin Principles & Patterns](https://wnmurphy.com/assets/pdf/Robert_C._Martin_-_2000_-_Principles_and_Patterns.pdf)
 
 ## 08-03-24
 class produces an instance that is a single instance. therefore classes are names in singular

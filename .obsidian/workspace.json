@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "39060006fa2750ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "86f2a38a1a343bb6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a7fc639d6d35a56",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "077ea2d2d4123338",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb26d55479675eb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27644fa7455b7220",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "19e33e227c06c290",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2267a61c73cd02c7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "fb64e04347bfcc90",
+    "type": "split",
+    "children": [
+      {
+        "id": "76b3c79842954481",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c67e1c24cdff7ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5e92f615bdabffef",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "732b6160957fc3a4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "11f2982f17af976c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "2a7fc639d6d35a56",
+  "lastOpenFiles": [
+    "(3) Erlang for WA.md",
+    "Memoir!.md",
+    "(2) Large System Design.md",
+    "README.md",
+    "image.jpg",
+    "Working on Assignments.md",
+    "(1) WebDev.md",
+    "Assignment.md",
+    "images/Screenshot_2024-03-08_210209.png.~tmp",
+    "images/Screenshot_2024-03-08_210209.png",
+    "images/kafka.png",
+    "images/cost_of_bug_fix.png",
+    "[.md",
+    "images/Screenshot_2024-03-04_212416.png",
+    "images/Screenshot 2024-02-26 205835.png",
+    "images/Screenshot_2024-03-04_211850.png",
+    "images/Screenshot 2024-02-26 205903.png",
+    "images/Screenshot 2024-03-04 201820.png",
+    "images/Screenshot.md",
+    "images/Comic_2024-03-01 201410.png",
+    "images/Screenshot 2024-02-26 205835.png.~tmp",
+    "images",
+    "New folder",
+    "spring.io/guide/gs/authenticating-ldap.md",
+    "spring.io/guide/gs",
+    "spring.io/guide",
+    "spring.io",
+    "demo/build/tmp/compileJava/previous-compilation-data.bin",
+    "demo/build/classes/java/main/com/example/demo/DemoApplication.class",
+    "demo/build/classes/java/main/com/example/demo",
+    "demo/HELP.md",
+    "apache-maven-3.9.6-src/apache-maven-3.9.6/README.md",
+    "apache-maven-3.9.6-src/apache-maven-3.9.6/CONTRIBUTING.md",
+    "security_demo/demo/HELP.md",
+    "demo/demo/HELP.md",
+    "spring_demo/demo/HELP.md",
+    "first_foray/node_modules/@angular/platform-browser-dynamic/README.md",
+    "first_foray/node_modules/@angular-devkit/build-webpack/README.md",
+    "first_foray/node_modules/@babel/helper-split-export-declaration/README.md",
+    "first_foray/node_modules/@babel/plugin-transform-async-generator-functions/README.md",
+    "first_foray/node_modules/@babel/code-frame/README.md",
+    "first_foray/node_modules/@babel/parser/README.md",
+    "first_foray/node_modules/@babel/parser/CHANGELOG.md",
+    "first_foray/node_modules/@babel/traverse/README.md",
+    "first_foray/node_modules/@babel/template/README.md",
+    "first_foray/node_modules/@babel/highlight/README.md"
+  ]
+}
