@@ -383,3 +383,27 @@ Additional starting points
 - [ ] [Martin Fowler on waterfall](https://martinfowler.com/bliki/WaterfallProcess.html)
 - [ ] This is the bare minimum every programmer needs to know about unicode
 - [ ] Designing Data Intensive Applications (?)
+
+## 05-03-2024
+# Gen AI
+Eliza - looking for keywords, pattern matching; abstract away input/ouput from algorithm. Deterministic.
+
+Joseph Weizenbaum
+
+Parry - Dr Kenneth Colby - turing test as a tool to explain our own understanding of consciousness.
+
+Turing predicted we'd be able to pass the test at 10^8 memory, 70% of the time - we have not.
+
+The problem of consciousness. Leibniz
+
+How do we define understanding? Can a transformation and pattern matching algorithm be called understanding?
+
+Prompt engineering. If you give it a bunch of ip/op you're happy with and end it with an ip, it is likely to give an output you're happy with.
+
+Chauvinism/anthromorphism - attributing human characteristics to things that are decidedly not human. You could pass the turing test with emotional manipulation.
+
+Is 'understanding' a meaningful question to ask? We understand intelligence in human centric terms. Marty Neve - 'no interest in commnication; stylistic mimicry'.
+
+Loebner prize. 
+
+Can we come up with reasoable methods to interact with genai while it undergoes paradigm shifts?
